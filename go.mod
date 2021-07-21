@@ -1,4 +1,4 @@
-module protobench
+module proto-benchmark-value-vs-pointers
 
 go 1.16
 

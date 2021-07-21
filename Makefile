@@ -6,10 +6,8 @@ bench:
 
 build-proto:
 	go get google.golang.org/protobuf/cmd/protoc-gen-go@latest
-	protoc --go_out=paths=source_relative:. *.proto
-
-cpu-prof:
-	go tool pprof profile.out
+	protoc --go_out=paths=source_relative:. proto/*.proto
 
 mem-prof:
-	go tool pprof memprofile.out
+	x-www-browser http://localhost:6060/debug/pprof
+	go run cmd/main.go
